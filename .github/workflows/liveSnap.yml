@@ -1,0 +1,11 @@
+- name: Create screenshots
+  uses: alexrogalskiy/github-action-screenshots@master
+  with:
+    url: 'https://lufteinz.github.io/ArmaReforgerHowToMod/'
+    name: 'screenshot'
+    path: 'images'
+    extension: 'png'
+    encoding: 'binary'
+    fullPage: false
+    width: 400
+    height: 400

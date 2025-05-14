@@ -1,2 +1,0 @@
-# ArmaReforgerHowToMod
-explanation

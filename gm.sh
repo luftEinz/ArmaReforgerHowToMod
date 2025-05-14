@@ -1,5 +1,5 @@
 #!/bin/bash
-commit="\$Date: $(date +%Y-%m-%d\ %H:%M:%S)"
+commit="\Date: $(date +%Y-%m-%d\ %H:%M:%S)"
 
 git add .
 git commit -m "$commit"

@@ -1,0 +1,63 @@
+name: Deploy ASP.NET Core to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Publish
+        run: dotnet publish ASP/ClaudeClientManager/ClaudeClientManager.csproj -c Release -o release --nologo
+
+      - name: Create index.html
+        run: |
+          echo '<!DOCTYPE html>
+          <html>
+          <head>
+            <title>Claude Client Manager</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="css/site.css">
+          </head>
+          <body>
+            <h1>Welcome to Claude Client Manager</h1>
+            <script src="js/site.js"></script>
+          </body>
+          </html>' > release/wwwroot/index.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './release/wwwroot'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+# Simple workflow for deploying static content to GitHub Pages
+>>>>>>> e44a50a (yes)
 name: Deploy ASP.NET Core to GitHub Pages
 
 on:

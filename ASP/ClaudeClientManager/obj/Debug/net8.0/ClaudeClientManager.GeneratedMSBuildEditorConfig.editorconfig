@@ -17,3 +17,19 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = /workspaces/ArmaReforgerHowToMod/ASP/ClaudeClientManager
 build_property._RazorSourceGeneratorDebug = 
+
+[/workspaces/ArmaReforgerHowToMod/ASP/ClaudeClientManager/Views/Home/Downloads.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Eb3dubG9hZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/workspaces/ArmaReforgerHowToMod/ASP/ClaudeClientManager/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/workspaces/ArmaReforgerHowToMod/ASP/ClaudeClientManager/Views/Home/Tools.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Ub29scy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/workspaces/ArmaReforgerHowToMod/ASP/ClaudeClientManager/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

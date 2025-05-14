@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClaudeClientManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c4c9f94b02655700b4e2635d5e66467fb2c91df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12e6d5ad736b8234edfa34bb4d1ba8f9230f724f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClaudeClientManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClaudeClientManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

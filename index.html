@@ -2,371 +2,259 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arma Reforger PvPvE Modding Guide</title>
+  <title>PvPvE Modding Guide</title>
   <style>
-    :root {
-      --bg-color: #121212;
-      --bg-secondary: #1e1e1e;
-      --text-primary: #e0e0e0;
-      --text-secondary: #9e9e9e;
-      --accent-color: #c75133;
-      --border-color: #333;
-      --header-color: #1a1a1a;
-      --card-bg: #202020;
-    }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-primary);
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    header {
-      background-color: var(--header-color);
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border-color);
-    }
-    
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: var(--text-primary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    .logo span {
-      color: var(--accent-color);
-    }
-    
-    h1, h2, h3, h4 {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-    
-    h1 {
-      font-size: 28px;
-      margin-top: 40px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border-color);
-    }
-    
-    h2 {
-      font-size: 24px;
-      margin-top: 30px;
-      color: var(--accent-color);
-    }
-    
-    h3 {
-      font-size: 20px;
-      margin-top: 25px;
-    }
-    
-    ul {
-      padding-left: 20px;
-    }
-    
-    ul li {
-      margin-bottom: 8px;
-    }
-    
-    .card {
-      background-color: var(--card-bg);
-      border-radius: 5px;
-      padding: 20px;
-      margin: 20px 0;
-      border-left: 3px solid var(--accent-color);
-    }
-    
-    .important {
-      background-color: rgba(199, 81, 51, 0.15);
-      border-radius: 5px;
-      padding: 15px;
-      margin: 20px 0;
-      border-left: 4px solid var(--accent-color);
-    }
-    
-    hr {
-      border: none;
-      border-top: 1px solid var(--border-color);
-      margin: 30px 0;
-    }
-    
-    code, pre {
-      background-color: #272822;
-      color: #f8f8f2;
-      border-radius: 3px;
-      font-family: 'Courier New', Courier, monospace;
-    }
-    
-    pre {
-      padding: 15px;
-      overflow-x: auto;
-    }
-    
-    code {
-      padding: 2px 5px;
-    }
-    
-    em {
-      color: var(--text-secondary);
-      font-style: italic;
-    }
-    
-    /* Tree View Styling */
-    ul.tree, ul.tree ul {
-      list-style-type: none;
-      margin-left: 15px;
-      padding-left: 15px;
-    }
-    
-    ul.tree {
-      margin-left: 0;
-      padding-left: 0;
-      margin-top: 20px;
-    }
-    
-    ul.tree li {
-      position: relative;
-      padding-left: 25px;
-      margin-bottom: 10px;
-    }
-    
-    ul.tree li::before {
-      content: "📁";
-      position: absolute;
-      left: 0;
-      color: var(--accent-color);
-    }
-    
-    ul.tree li.file::before {
-      content: "📄";
-      color: var(--text-secondary);
-    }
-    
-    ul.tree ul {
-      border-left: 1px dashed var(--border-color);
-      margin-top: 10px;
-    }
-    
-    footer {
-      margin-top: 60px;
-      padding: 20px 0;
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 14px;
-      border-top: 1px solid var(--border-color);
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <div class="logo">Arma <span>Reforger</span> Modding</div>
-    </div>
-  </header>
-
-  <div class="container">
-    <h1
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arma Reforger PvPvE Modding Guide</title>
+  <title>PvPvE Modding Guide</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #121212;
-      --bg-secondary: #1e1e1e;
-      --text-primary: #e0e0e0;
-      --text-secondary: #9e9e9e;
-      --accent-color: #c75133;
-      --border-color: #333;
-      --header-color: #1a1a1a;
-      --card-bg: #202020;
+      --bg-main: #181b1f;
+      --bg-card: #23272b;
+      --text-main: #f1f3f6;
+      --text-muted: #8a9099;
+      --accent: #e1a14a;
+      --danger: #d94c3a;
+      --border: #2b2f33;
+      --shadow: 0 2px 16px rgba(0,0,0,0.7);
+      --radius: 12px;
+      --font-main: 'Montserrat', Arial, sans-serif;
     }
-    
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-primary);
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
+      font-family: var(--font-main);
+      max-width: 760px;
+      margin: 40px auto;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 25px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      min-height: 100vh;
     }
-    
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    header {
-      background-color: var(--header-color);
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border-color);
-    }
-    
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: var(--text-primary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    .logo span {
-      color: var(--accent-color);
-    }
-    
+
     h1, h2, h3, h4 {
-      color: var(--text-primary);
-      font-weight: 600;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-top: 2em;
+      margin-bottom: 0.6em;
     }
-    
-    h1 {
-      font-size: 28px;
-      margin-top: 40px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border-color);
-    }
-    
-    h2 {
-      font-size: 24px;
-      margin-top: 30px;
-      color: var(--accent-color);
-    }
-    
-    h3 {
-      font-size: 20px;
-      margin-top: 25px;
-    }
-    
-    ul {
-      padding-left: 20px;
-    }
-    
-    ul li {
-      margin-bottom: 8px;
-    }
-    
-    .card {
-      background-color: var(--card-bg);
-      border-radius: 5px;
-      padding: 20px;
-      margin: 20px 0;
-      border-left: 3px solid var(--accent-color);
-    }
-    
-    .important {
-      background-color: rgba(199, 81, 51, 0.15);
-      border-radius: 5px;
-      padding: 15px;
-      margin: 20px 0;
-      border-left: 4px solid var(--accent-color);
-    }
-    
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.2em; }
+    h4 { font-size: 1.1em; }
+
     hr {
+      margin: 2em 0;
       border: none;
-      border-top: 1px solid var(--border-color);
-      margin: 30px 0;
+      border-top: 1px solid var(--border);
     }
-    
-    code, pre {
-      background-color: #272822;
-      color: #f8f8f2;
-      border-radius: 3px;
-      font-family: 'Courier New', Courier, monospace;
-    }
-    
-    pre {
-      padding: 15px;
-      overflow-x: auto;
-    }
-    
-    code {
-      padding: 2px 5px;
-    }
-    
-    em {
-      color: var(--text-secondary);
-      font-style: italic;
-    }
-    
-    /* Tree View Styling */
+
     ul.tree, ul.tree ul {
       list-style-type: none;
-      margin-left: 15px;
-      padding-left: 15px;
-    }
-    
-    ul.tree {
-      margin-left: 0;
-      padding-left: 0;
-      margin-top: 20px;
-    }
-    
-    ul.tree li {
+      margin-left: 22px;
+      padding-left: 18px;
       position: relative;
-      padding-left: 25px;
+    }
+    ul.tree ul {
+      margin-left: 14px;
+      border-left: 1px solid var(--border);
+    }
+    ul.tree > li {
       margin-bottom: 10px;
     }
-    
     ul.tree li::before {
       content: "📁";
-      position: absolute;
-      left: 0;
-      color: var(--accent-color);
+      margin-right: 6px;
+      color: var(--text-muted);
     }
-    
     ul.tree li.file::before {
       content: "📄";
-      color: var(--text-secondary);
+      margin-right: 6px;
+      color: #aaa;
     }
-    
-    ul.tree ul {
-      border-left: 1px dashed var(--border-color);
-      margin-top: 10px;
+
+    em {
+      color: var(--text-muted);
+      font-size: 90%;
     }
-    
-    footer {
-      margin-top: 60px;
-      padding: 20px 0;
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 14px;
-      border-top: 1px solid var(--border-color);
+    .important {
+      background: #23272b;
+      border-left: 5px solid var(--accent);
+      padding: 1em 1.5em;
+      margin: 2em 0;
+      font-size: 1.05em;
+      color: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .important b {
+      color: var(--accent);
+      font-size: 1.1em;
+    }
+    .important ol li {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    pre {
+      background: #181b1f;
+      color: #f1f3f6;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 1em;
+      border: 1px solid var(--border);
+      margin-bottom: 1.5em;
+    }
+
+    ul, ol {
+      margin-bottom: 1.2em;
+    }
+    ul li, ol li {
+      margin-bottom: 0.4em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: var(--danger);
+    }
+
+    /* Optional: Card-like wrapper for main content */
+    body > *:not(hr):not(.important) {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 1.3em 1.6em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      margin-bottom: 1.5em;
+    }
+    /* Remove card effect from .important box */
+    .important {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo">Arma <span>Reforger</span> Modding</div>
-    </div>
-  </header>
 
-  <div class="container">
-    <h1
+<h2>Start Simple</h2>
+<ul>
+  <li>Download mods that you know work</li>
+  <li>Experiment freely</li>
+  <li>Don't get discouraged by mistakes</li>
+  <li>Be ready to start over when needed</li>
+</ul>
+
+<hr>
+
+<h1>2. Folder Structure</h1>
+<h2>Organization is Key to Stability</h2>
+
+<h3>Folder Tree Example</h3>
+<ul class="tree">
+  <li>PvPvE_ModPack/
+    <ul>
+      <li>Core_Mod/ <em># Foundation dependencies</em>
+        <ul>
+          <li class="file">WCS_Core/ <em># Hierarchy 1</em></li>
+          <li class="file">RHS_Status_Quo/ <em># Hierarchy 2</em></li>
+        </ul>
+      </li>
+      <li>Core_Layer1/ <em># Primary gameplay elements</em>
+
+  </style>
+</head>
+<body>
+
+<h2>Start Simple</h2>
+<ul>
+  <li>Download mods that you know work</li>
+  <li>Experiment freely</li>
+  <li>Don't get discouraged by mistakes</li>
+  <li>Be ready to start over when needed</li>
+</ul>
+
+<hr>
+
+<h1>2. Folder Structure</h1>
+<h2>Organization is Key to Stability</h2>
+
+<h3>Folder Tree Example</h3>
+<ul class="tree">
+  <li>PvPvE_ModPack/
+    <ul>
+      <li>Core_Mod/ <em># Foundation dependencies</em>
+        <ul>
+          <li class="file">WCS_Core/ <em># Hierarchy 1</em></li>
+          <li class="file">RHS_Status_Quo/ <em># Hierarchy 2</em></li>
+        </ul>
+      </li>
+      <li>Core_Layer1/ <em># Primary gameplay elements</em>
+        <ul>
+          <li class="file">Weapons/</li>
+          <li class="file">Vehicles/</li>
+          <li class="file">Clothing_Gear/</li>
+          <li class="file">Factions/</li>
+        </ul>
+      </li>
+      <li>Core_Layer2/ <em># Environment &amp; gameplay modes</em>
+        <ul>
+          <li class="file">Terrains_Maps/</li>
+          <li class="file">Game_Modes/</li>
+          <li class="file">Missions/</li>
+          <li class="file">Terrain_Tools_Assets/</li>
+        </ul>
+      </li>
+      <li>Custom_Settings/ <em># Your modified configurations</em></li>
+    </ul>
+  </li>
+</ul>
+
+<h2>Layers Overview</h2>
+<ul>
+  <li>Weapons</li>
+  <li>Vehicles</li>
+  <li>Clothing &amp; Gear</li>
+  <li>Factions <br><i>^ all in one group</i></li>
+  <li>Terrains (maps)</li>
+  <li>Game Modes</li>
+  <li>Missions</li>
+  <li>Terrains Tools, Assets &amp; Prefabs</li>
+</ul>
+<p>
+  <em>
+    Any settings mods are not required since we will be majorly changing settings.
+  </em>
+</p>
+
+<div class="important">
+  <b>⚠️ IMPORTANT REALIZATION ⚠️</b>
+  <p><i>From experience, ALL these mods require:</i></p>
+  <ol>
+    <li><b>WCS Core</b></li>
+    <li><b>RHS Status Quo</b></li>
+  </ol>
+  <p>
+    <i>
+      These should be in EVERY Core mod for PvPvE (Hierarchy 1 and 2).
+    </i>
+  </p>
+</div>
+
+<h2>Getting Started</h2>
+<p><i>Start Arma Reforger and head to Workbench.</i></p>
+<h3>Download to a custom folder:</h3>
+<pre>
+-addonDownloadDir C:\%USERPROFILE%\Documents\My Games\Arma Reforger\YOUR_CUSTOM_FOLDER
+</pre>
+
+</body>
+</html>

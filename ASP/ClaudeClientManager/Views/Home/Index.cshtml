@@ -1,0 +1,73 @@
+@model ClaudeClientManager.Models.ModGuideViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<link rel="stylesheet" href="~/css/modguide.css" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+
+<div class="content-card">
+    <h2>Start Simple</h2>
+    <ul>
+        <li>Download mods that you know work</li>
+        <li>Experiment freely</li>
+        <li>Don't get discouraged by mistakes</li>
+        <li>Be ready to start over when needed</li>
+    </ul>
+</div>
+
+<hr>
+
+<div class="content-card">
+    <h1>2. Folder Structure</h1>
+    <h2>Organization is Key to Stability</h2>
+
+    <h3>Folder Tree Example</h3>
+    <ul class="tree">
+        <li>PvPvE_ModPack/
+            <ul>
+                <li>Core_Mod/ <em># Foundation dependencies</em>
+                    <ul>
+                        @foreach (var mod in Model.CoreMods)
+                        {
+                            <li class="file">@mod</li>
+                        }
+                    </ul>
+                </li>
+                @foreach (var layer in Model.Layers)
+                {
+                    <li>@layer.Name <em># @layer.Description</em>
+                        <ul>
+                            @foreach (var item in layer.Items)
+                            {
+                                <li class="file">@item</li>
+                            }
+                        </ul>
+                    </li>
+                }
+                <li>Custom_Settings/ <em># Your modified configurations</em></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="important">
+    <b>⚠️ IMPORTANT REALIZATION ⚠️</b>
+    <p><i>From experience, ALL these mods require:</i></p>
+    <ol>
+        @foreach (var mod in Model.CoreMods)
+        {
+            <li><b>@mod</b></li>
+        }
+    </ol>
+    <p>
+        <i>These should be in EVERY Core mod for PvPvE (Hierarchy 1 and 2).</i>
+    </p>
+</div>
+
+<div class="content-card">
+    <h2>Getting Started</h2>
+    <p><i>Start Arma Reforger and head to Workbench.</i></p>
+    <h3>Download to a custom folder:</h3>
+    <pre>-addonDownloadDir C:\%USERPROFILE%\Documents\My Games\Arma Reforger\YOUR_CUSTOM_FOLDER</pre>
+</div>
